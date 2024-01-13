@@ -24,7 +24,7 @@ class ArticleRepository extends ServiceEntityRepository
     public function getRecentArticles(int $count)
     {
         return $this->createQueryBuilder('article')
-            ->orderBy('article.createdAt', 'desk')
+            ->orderBy('article.createdAt', 'desc')
             ->getQuery()
             ->setMaxResults($count)
             ->getResult();
