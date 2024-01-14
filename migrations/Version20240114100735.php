@@ -31,9 +31,7 @@ final class Version20240114100735 extends AbstractMigration
         $this->addSql('ALTER TABLE comment ADD CONSTRAINT FK_9474526CF675F31B FOREIGN KEY (author_id) REFERENCES "user" (id) NOT DEFERRABLE INITIALLY IMMEDIATE');
         $this->addSql('ALTER TABLE comment ADD CONSTRAINT FK_9474526C6BF700BD FOREIGN KEY (status_id) REFERENCES comment_status (id) NOT DEFERRABLE INITIALLY IMMEDIATE');
 
-        foreach (['new', 'published', 'rejected'] as $commentStatus) {
-            $this->addSql('INSERT INTO comment_status (name) values (:name)', ['name' => $commentStatus]);
-        }
+
     }
 
     public function down(Schema $schema): void
