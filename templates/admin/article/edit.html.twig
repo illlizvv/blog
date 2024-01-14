@@ -5,9 +5,9 @@
 {% block body %}
     <h1>Edit Article</h1>
 
-    {{ include('article/_form.html.twig', {'button_label': 'Обновить'}) }}
+    {{ include('admin/article/_form.html.twig', {'button_label': 'Обновить'}) }}
 
     <a class="btn btn-secondary" href="{{ path('app_article_index') }}">{{ 'К списку' }}</a>
 
-    {{ include('article/_delete_form.html.twig') }}
+    {{ include('admin/article/_delete_form.html.twig') }}
 {% endblock %}
